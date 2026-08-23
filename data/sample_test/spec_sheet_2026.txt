@@ -1,0 +1,14 @@
+TECHNICAL SPECIFICATION SHEET - 2026
+Model: GV-9000
+Product: High-Pressure Globe Valve
+Brand: FlowControl Corp
+Size: 3 in.
+Material: 316 Stainless Steel
+Body Material: 316 Stainless Steel
+Pressure Rating: 300 PSI
+Temperature Rating: 500°F
+Connection Type: Flanged ANSI 150
+Seal Material: Graphite
+Bore Type: Reduced Port
+Application: High-Pressure Steam, Chemical Processing, Oil & Gas
+Standard: ASME B16.34
