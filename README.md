@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg)](https://streamlit.io/)
-[![Google Gemini](https://img.shields.io/badge/AI Engine-Gemini 2.0 Flash-4285F4.svg)](https://ai.google.dev/)
+[![Google Gemini](https://img.shields.io/badge/AI_Engine-Gemini_2.0_Flash-4285F4.svg)](https://ai.google.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -26,12 +26,12 @@ Industrial manufacturers manage product information across websites, legacy PDF 
 ### 1️⃣ Executive Governance Dashboard
 *Real-time catalog health metrics, 6-step processing pipeline status, and interactive Plotly trust distribution charts.*
 
-![Executive Dashboard](top_2_ppt_images/1_Executive_Dashboard_Overview.png)
+![Executive Dashboard](docs/images/1_Executive_Dashboard_Overview.png)
 
 ### 2️⃣ Hero Innovation: Transparent Conflict Detection & Human-in-the-Loop
 *Never silently overwrites data. Displays side-by-side visual diff cards with explainable AI rationales and 1-click human review buttons.*
 
-![Conflict Detection Card](top_2_ppt_images/2_Hero_Conflict_Detection_Card.png)
+![Conflict Detection Card](docs/images/2_Hero_Conflict_Detection_Card.png)
 
 ---
 
@@ -130,7 +130,8 @@ Provenza-AI/
 │   ├── app.py                    # Main Streamlit Router & Navigation
 │   ├── styles.py                 # Enterprise Glassmorphic Theme CSS
 │   └── pages/                    # 7 Dashboard Pages (Overview, Analysis, Conflicts, etc.)
-├── top_2_ppt_images/             # Clean Presentation Screenshots
+├── docs/
+│   └── images/                   # Clean Documentation Screenshots
 ├── tests/                        # 39 Unit & Integration Tests
 ├── run.py                        # Application Entry Point
 └── requirements.txt              # Dependencies
