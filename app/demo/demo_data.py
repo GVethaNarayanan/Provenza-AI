@@ -10,23 +10,43 @@ Deliberate conflict: Pressure rating 150 PSI vs 200 PSI
 """
 
 from datetime import datetime
-from app.models.source import (
-    SourceMetadata,
-    SourceType,
-    SourceAuthority,
-    ExtractedAttribute,
-    ExtractedEvidence,
-    ParsedDocument,
-    ParsedPage,
-)
-from app.models.reconciliation import (
-    ReconciliationResult,
-    ReconciliationEntry,
-    ConflictDetail,
-    AttributeStatus,
-)
-from app.models.product import ProductInput, ValidatedAttribute, ProductRecord
-from app.models.audit import AuditTrail, AuditEntry
+
+try:
+    from app.models.source import (
+        SourceMetadata,
+        SourceType,
+        SourceAuthority,
+        ExtractedAttribute,
+        ExtractedEvidence,
+        ParsedDocument,
+        ParsedPage,
+    )
+    from app.models.reconciliation import (
+        ReconciliationResult,
+        ReconciliationEntry,
+        ConflictDetail,
+        AttributeStatus,
+    )
+    from app.models.product import ProductInput, ValidatedAttribute, ProductRecord
+    from app.models.audit import AuditTrail, AuditEntry
+except ModuleNotFoundError:
+    from models.source import (
+        SourceMetadata,
+        SourceType,
+        SourceAuthority,
+        ExtractedAttribute,
+        ExtractedEvidence,
+        ParsedDocument,
+        ParsedPage,
+    )
+    from models.reconciliation import (
+        ReconciliationResult,
+        ReconciliationEntry,
+        ConflictDetail,
+        AttributeStatus,
+    )
+    from models.product import ProductInput, ValidatedAttribute, ProductRecord
+    from models.audit import AuditTrail, AuditEntry
 
 
 # ============================================================
@@ -478,8 +498,12 @@ def run_demo_pipeline():
     Execute the full demo pipeline and return all results.
     Uses the real reconciliation engine with pre-built demo data.
     """
-    from app.reconciliation.engine import ReconciliationEngine
-    from app.storage.store import store
+    try:
+        from app.reconciliation.engine import ReconciliationEngine
+        from app.storage.store import store
+    except ModuleNotFoundError:
+        from reconciliation.engine import ReconciliationEngine
+        from storage.store import store
 
     engine = ReconciliationEngine()
 

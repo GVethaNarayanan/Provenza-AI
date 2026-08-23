@@ -98,7 +98,10 @@ def main():
 
     # Load demo data if demo mode is on
     if demo_mode and not st.session_state.demo_loaded:
-        from app.demo.demo_data import run_demo_pipeline
+        try:
+            from app.demo.demo_data import run_demo_pipeline
+        except ModuleNotFoundError:
+            from demo.demo_data import run_demo_pipeline
         st.session_state.demo_results = run_demo_pipeline()
         st.session_state.demo_loaded = True
         st.session_state.analysis_complete = True

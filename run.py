@@ -7,11 +7,16 @@ import os
 import sys
 from pathlib import Path
 
-# Unconditionally add project root directory to sys.path for Streamlit Cloud
+# Fix sys.path unconditionally for cloud deployment (Streamlit Cloud, Render, HuggingFace)
 ROOT_DIR = Path(__file__).resolve().parent
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
-os.environ["PYTHONPATH"] = str(ROOT_DIR)
+APP_DIR = ROOT_DIR / "app"
+
+for p in [str(ROOT_DIR), str(APP_DIR)]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
+
+os.chdir(ROOT_DIR)
+os.environ["PYTHONPATH"] = f"{ROOT_DIR}{os.pathsep}{APP_DIR}"
 
 from ui.app import main
 
